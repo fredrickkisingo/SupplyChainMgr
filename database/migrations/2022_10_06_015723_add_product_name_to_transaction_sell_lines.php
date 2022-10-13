@@ -14,7 +14,7 @@ class AddProductNameToTransactionSellLines extends Migration
     public function up()
     {
         Schema::table('transaction_sell_lines', function (Blueprint $table) {
-            //
+            $table->string('product_name');
         });
     }
 
@@ -26,7 +26,7 @@ class AddProductNameToTransactionSellLines extends Migration
     public function down()
     {
         Schema::table('transaction_sell_lines', function (Blueprint $table) {
-            //
+            $table->dropIfExists('product_name');
         });
     }
 }
